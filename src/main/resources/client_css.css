@@ -1,0 +1,32 @@
+#vbox1
+{
+	-fx-border-color: black;
+	-fx-border-width: 1;
+	-fx-border-style: solid;
+	-fx-background-color: lightsteelblue;
+}
+
+#mainbox
+{
+	-fx-background-color: papayawhip;
+	-fx-border-color: black;
+	-fx-border-width: 1;
+	-fx-border-style: solid;
+}
+
+.button
+{
+    -fx-background-color: lightsteelblue;
+}
+
+.button:hover
+{
+    -fx-background-color: cadetblue;
+}
+
+.table-view
+{
+    -fx-border-color: black;
+    -fx-border-width: 1;
+    -fx-border-style: solid;
+}
