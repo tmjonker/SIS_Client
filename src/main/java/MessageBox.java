@@ -6,7 +6,7 @@ import javafx.stage.*;
 
 public class MessageBox {
 
-    public static void show(String message, String title) {
+    public MessageBox(String message, String title) {
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle(title);

@@ -36,12 +36,12 @@ public class School {
         dataOutputStream.writeInt(-1);
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream1);
         objectOutputStream.writeObject(s);
-        new MessageBox().show("You have been added to the SIS.", "Success!");
+        new MessageBox("You have been added to the SIS.", "Success!");
         } catch (IOException ex) {
-            new MessageBox().show("Connection has been interrupted.", "ERROR");
+            new MessageBox("Connection has been interrupted.", "ERROR");
             System.exit(0);
         } catch (NullPointerException ex) {
-            new MessageBox().show("NullPointerException", "ERROR");
+            new MessageBox("NullPointerException", "ERROR");
         }
     }
 
@@ -55,7 +55,7 @@ public class School {
             DataInputStream dataInputStream = new DataInputStream(inputStream);
             numOfStudents = dataInputStream.readInt();
         } catch (IOException ex) {
-            new MessageBox().show("Connection has been interrupted.", "ERROR");
+            new MessageBox("Connection has been interrupted.", "ERROR");
             System.exit(0);
         }
     }
@@ -71,7 +71,7 @@ public class School {
             dataOutputStream.writeInt(id);
         } catch (IOException ex) {
             System.out.println("requestStudentData." + ex);
-            new MessageBox().show("Connection has been interrupted.", "ERROR");
+            new MessageBox("Connection has been interrupted.", "ERROR");
             System.exit(0);
         }
     }
@@ -87,7 +87,7 @@ public class School {
             student = (Student) objectInputStream.readObject();
         } catch (IOException ex) {
             System.out.println("receiveStudent." + ex);
-            new MessageBox().show("Connection has been interrupted.", "ERROR");
+            new MessageBox("Connection has been interrupted.", "ERROR");
             System.exit(0);
         } catch (ClassNotFoundException ex) {
             System.out.println(ex);
@@ -112,7 +112,7 @@ public class School {
             DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
             dataOutputStream.writeInt(-3);
         } catch (IOException ex) {
-            new MessageBox().show("Connection has been interrupted.", "ERROR");
+            new MessageBox("Connection has been interrupted.", "ERROR");
             System.exit(0);
         }
         try {
@@ -120,7 +120,7 @@ public class School {
             DataInputStream dataInputStream = new DataInputStream(inputStream);
             numCourses = dataInputStream.readInt();
         } catch (IOException ex) {
-            new MessageBox().show("Connection has been interrupted.", "ERROR");
+            new MessageBox("Connection has been interrupted.", "ERROR");
             System.exit(0);
         }
         try {
@@ -130,7 +130,7 @@ public class School {
                 courseList.add((Course) objectInputStream.readObject());
             }
         } catch (IOException ex) {
-            new MessageBox().show("Connection has been interrupted.", "ERROR");
+            new MessageBox("Connection has been interrupted.", "ERROR");
             System.exit(0);
         } catch (ClassNotFoundException ex) {
             System.out.println(ex);
@@ -147,7 +147,7 @@ public class School {
             DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
             dataOutputStream.writeInt(-4);
         } catch (IOException ex) {
-            new MessageBox().show("Connection has been interrupted.", "ERROR");
+            new MessageBox("Connection has been interrupted.", "ERROR");
             System.exit(0);
         }
         try {
@@ -156,7 +156,7 @@ public class School {
             printWriter.println(studentId + "," + course.getId());
             printWriter.flush();
         } catch (IOException ex) {
-            new MessageBox().show("Connection has been interrupted.", "ERROR");
+            new MessageBox("Connection has been interrupted.", "ERROR");
             System.exit(0);
         }
         try {
@@ -165,14 +165,14 @@ public class School {
             int outcome = dataInputStream.readInt();
 
             if (outcome == 1) {
-                new MessageBox().show(course.getName() + " has been added to your schedule.",
+                new MessageBox(course.getName() + " has been added to your schedule.",
                         "SUCCESS");
             } else if (outcome == -1) {
-                new MessageBox().show(course.getName() + " could not be added to your schedule.",
+                new MessageBox(course.getName() + " could not be added to your schedule.",
                         "ERROR");
             }
         } catch (IOException ex) {
-            new MessageBox().show("Connection has been interrupted.", "ERROR");
+            new MessageBox("Connection has been interrupted.", "ERROR");
             System.exit(0);
         }
     }
@@ -187,7 +187,7 @@ public class School {
             dataOutputStream.writeInt(-5);
             dataOutputStream.writeInt(student.getStudentNumber());
         } catch (IOException ex) {
-            new MessageBox().show("Connection has been interrupted.", "ERROR");
+            new MessageBox("Connection has been interrupted.", "ERROR");
             System.exit(0);
         }
         try {
@@ -204,7 +204,7 @@ public class School {
                 courseList.add((Course) objectInputStream.readObject());
             }
         } catch (IOException ex) {
-            new MessageBox().show("Connection has been interrupted.", "ERROR");
+            new MessageBox("Connection has been interrupted.", "ERROR");
             System.exit(0);
         } catch (ClassNotFoundException ex) {
             System.out.println(ex);
@@ -218,7 +218,7 @@ public class School {
             DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
             dataOutputStream.writeInt(-6);
         } catch (IOException ex) {
-            new MessageBox().show("Connection has been interrupted.", "ERROR");
+            new MessageBox("Connection has been interrupted.", "ERROR");
             System.exit(0);
         }
         try {
@@ -227,7 +227,7 @@ public class School {
             printWriter.println(studentId + "," + course.getId());
             printWriter.flush();
         } catch (IOException ex) {
-            new MessageBox().show("Connection has been interrupted.", "ERROR");
+            new MessageBox("Connection has been interrupted.", "ERROR");
             System.exit(0);
         }
         try {
@@ -237,14 +237,14 @@ public class School {
 
             if (outcome == 1) {
 
-                new MessageBox().show(course.getName() + " has been removed from your schedule.",
+                new MessageBox(course.getName() + " has been removed from your schedule.",
                         "SUCCESS");
             } else if (outcome == -1) {
-                new MessageBox().show("There was a problem with your request.",
+                new MessageBox("There was a problem with your request.",
                         "ERROR");
             }
         } catch (IOException ex) {
-            new MessageBox().show("Connection has been interrupted.", "ERROR");
+            new MessageBox("Connection has been interrupted.", "ERROR");
             System.exit(0);
         }
     }

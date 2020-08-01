@@ -66,13 +66,13 @@ public class ReturningStudentForm {
     private void onSubmitButtonClick(TextField s, Stage stage, School school) {
         if (s.getText().matches("^[a-zA-Z ]")) {
             s.clear();
-            new MessageBox().show("Your student ID should only contain numbers.", "Error");
+            new MessageBox("Your student ID should only contain numbers.", "Error");
         } else if (s.getText().isEmpty()) {
             s.clear();
-            new MessageBox().show("Please fill in one of the fields.", "Error");
+            new MessageBox("Please fill in one of the fields.", "Error");
         } else if (!school.checkOutOfRange(Integer.parseInt(s.getText()))) {
             s.clear();
-                new MessageBox().show("Your entry is invalid.  Please try again.", "Error");
+                new MessageBox("Your entry is invalid.  Please try again.", "Error");
         } else {
             school.requestStudentData(Integer.parseInt(s.getText()));
             new StudentDashboardForm(stage, school.receiveStudent(), school);

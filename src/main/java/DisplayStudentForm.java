@@ -113,9 +113,9 @@ public class DisplayStudentForm {
                 city.getText().isEmpty() || state.getText().isEmpty() || zip.getText().isEmpty() ||
                 email.getText().isEmpty()) {
 
-            new MessageBox().show("Please make sure you fill in all fields.", "ERROR: Empty Fields");
+            new MessageBox("Please make sure you fill in all fields.", "ERROR: Empty Fields");
         }  else if (state.getText().length() > 2) {
-            new MessageBox().show("Use the abbreviation for your state (e.g. VA, MD, etc.)"
+            new MessageBox("Use the abbreviation for your state (e.g. VA, MD, etc.)"
                     , "ERROR: Too many characters");
         } else {
             student.updateStudent(fn.getText(), mn.getText(), ln.getText(), add.getText(),

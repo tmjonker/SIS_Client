@@ -130,9 +130,9 @@ public class NewStudentForm {
                 city.getText().isEmpty() || st.getText().isEmpty() || zip.getText().isEmpty() ||
                 em.getText().isEmpty()) {
 
-            new MessageBox().show("Please make sure you fill in all fields.", "ERROR: Empty Fields");
+            new MessageBox("Please make sure you fill in all fields.", "ERROR: Empty Fields");
         }  else if (st.getText().length() > 2) {
-            new MessageBox().show("Use the abbreviation for your state (e.g. VA, MD, etc.)"
+            new MessageBox("Use the abbreviation for your state (e.g. VA, MD, etc.)"
                     , "ERROR: Too many characters");
         } else {
             Student s = new Student(fn.getText(), mn.getText(), ln.getText(), add.getText(), city.getText(),

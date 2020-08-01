@@ -24,6 +24,7 @@ public class Connector {
             trueFalse = false;
         } catch (IOException ex) {
             trueFalse = false;
+            ex.printStackTrace();
         }
         return trueFalse;
     }

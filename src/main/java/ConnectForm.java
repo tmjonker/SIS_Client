@@ -31,7 +31,7 @@ public class ConnectForm {
             School school = new School(connector.getNetSocket());
             new QueryForm(stage, school);
         } else {
-            new MessageBox().show("Connection Unsuccessful",
+            new MessageBox("Connection Unsuccessful",
                     "Connection Problem");
         }
     }
